@@ -1,36 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
-  labels:
-    app: my-app
+  name: venky-harness-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: venky-harness
   template:
     metadata:
       labels:
-        app: my-app
+        app: venky-harness
     spec:
       containers:
-        - name: my-app
-          image: "httpd"  # Apache HTTP Server
-          ports:
-            - containerPort: 8080  # Apache listens on port 80
-
+      - name: venky-harness
+        image: nginx
+        ports:
+        - containerPort: 80
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
+  name: venky-harness-service
 spec:
+  type: LoadBalancer
   selector:
-    app: my-app
+    app: venky-harness
   ports:
     - protocol: TCP
-      port: 80        # External Port
-      targetPort: 8080  # Internal Pod Port (must match `containerPort`)
-  type: LoadBalancer
+      port: 80
+      targetPort: 5000
