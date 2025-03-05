@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: venky-harness
-        image: shaikmustafa/mygame
+        image: shaikmustafa/cycle
         ports:
         - containerPort: 80
 ---
