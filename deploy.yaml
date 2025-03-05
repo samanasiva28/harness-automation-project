@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8081
-  type: NodePort  # Exposes the app to external traffic
+  type: Loadbalancer  # Exposes the app to external traffic
