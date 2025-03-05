@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: "nasi101/tetris" 
+          image: "httpd" 
           ports:
             - containerPort: 8080
 ---
@@ -31,4 +31,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8081
-  type: LoadBalancer  # Exposes the app to external traffic
+  type: NodePort  # Exposes the app to external traffic
