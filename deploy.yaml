@@ -16,19 +16,18 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: "httpd" 
+          image: "httpd"  # Apache HTTP Server
           ports:
-            - containerPort: 8080
----
+            - containerPort: 80  # Apache listens on port 80
 apiVersion: v1
 kind: Service
 metadata:
   name: my-app-service
 spec:
   selector:
-    app: my-app  # Ensure this matches the labels in your deployment
+    app: my-app
   ports:
     - protocol: TCP
-      port: 80         # External port (clients connect here)
-      targetPort: 8081 # Internal pod port (your app should run on 8081)
-  type: LoadBalancer   # Use LoadBalancer for cloud or NodePort for local
+      port: 80        # External Port
+      targetPort: 80  # Internal Pod Port (must match `containerPort`)
+  type: LoadBalancer
