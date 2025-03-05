@@ -32,5 +32,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80        # External Port
-      targetPort: 8081  # Internal Pod Port (must match `containerPort`)
+      targetPort: 8080  # Internal Pod Port (must match `containerPort`)
   type: LoadBalancer
