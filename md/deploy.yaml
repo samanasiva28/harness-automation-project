@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: "httpd"  # Apache HTTP Server
+          image: nginx:latest  # Apache HTTP Server
           ports:
             - containerPort: 80  # Apache listens on port 80
 
