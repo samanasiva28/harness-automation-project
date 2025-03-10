@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: venky-harness
-        image: nginx
+        image: shaikmustafa/netflix
         ports:
         - containerPort: 80
 ---
